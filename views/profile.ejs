@@ -1,0 +1,159 @@
+<% include includes/headers.ejs %>
+
+<body class="img2">
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page for your Budget Records</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+<div class="container">
+    <h1>"BUDGET RECORD TRACKER EXPENSES"</h1>
+<div id="wrapper">
+  <div id="expense-container">
+    <a id="goToExpense" href="/expense">Add Expense</a>
+    <a id="goToIncome" href="/income">Add Income</a>
+    <div id="expenseList">
+      <table class="table-bordered expenses-table">
+        <thead>
+          <th id="expenseHead">Name</th>
+          <th id="expenseHead">Company</th>
+          <th id="expenseHead">Payee</th>
+          <th id="expenseHead">Payment Type Period</th>
+          <th id="expenseHead">Day of Month</th>
+          <th id="expenseHead">Amount Paid</th>
+          <th id="expenseHead">Delete</th>
+          <th id="expenseHead">Edit/Update</th>
+
+        </thead>
+        <tbody>
+        <% for(var i=0; i<expenses.length; i++){ %>
+            <tr>
+              <td><%=expenses[i].name_of_expense%></td>
+              <td><%=expenses[i].company_name%></td>
+              <td><%=expenses[i].payee%></td>
+              <td class = "payPeriod"><%=expenses[i].pay_period%></td>
+              <td><%=expenses[i].date_of_month%></td>
+              <td class = 'payPeriodValue1'>
+              <% if (expenses[i].pay_period === "Monthly") { %>
+                    <%=expenses[i].monthly*12%>
+              <% } else if (expenses[i].pay_period === "Yearly") { %>
+                    <%=expenses[i].monthly%>
+              <% } else if (expenses[i].pay_period === "Weekly") { %>
+                    <%=expenses[i].monthly*52%>     
+              <% } else { %>
+              <% } %></td>
+              <td><a href="#" data-id="<%=expenses[i]._id%>" class="deleteExpenseLink">DELETE</a>
+              <td><a href="/expenses/<%=expenses[i]._id%>" class="updateExpenseLink">EDIT/UPDATE</a>
+            </tr>
+          <% } %></tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Total Expense
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td id="totalFeeMonthly"></td>
+              <td>X</td>
+              <td>X</td>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div id="incomeContainer">
+    <div id="incomeList">
+      <table class="table-bordered incomes-table">
+        <thead>
+          <th id="incomeHead">Employee</th>
+          <th id="incomeHead">Company</th>
+          <th id="incomeHead">Title</th>
+          <th id="incomeHead">Hours Per Week</th>
+          <th id="incomeHead">Rate of Pay</th>
+          <th id="incomeHead">Amount</th>
+          <th id="incomeHead">Delete</th>
+          <th id="incomeHead">Edit/Update</th>
+        </thead>
+        <tbody>
+          <% for(var i=0; i<incomes.length; i++){ %>
+            <tr>
+              <td><%=incomes[i].name_of_worker%></td>
+              <td><%=incomes[i].company_name%></td>
+              <td><%=incomes[i].company_title%></td>
+              <td><%=incomes[i].hours_work%></td>
+              <td><%=incomes[i].pay_period%></td>
+              <td class = "payPeriodValue2">
+              <% if (incomes[i].pay_period === "Monthly") { %>
+                    <%=incomes[i].yearly*12%>
+              <% } else if (incomes[i].pay_period === "Yearly") { %>
+                    <%=incomes[i].yearly%>
+              <% } else if (incomes[i].pay_period === "Weekly") { %>
+                    <%=incomes[i].yearly*52%>
+              <% } else if (incomes[i].pay_period === "Hourly") { %>
+                    <%=incomes[i].yearly*8%>           
+              <% } else { %>
+              <% } %></td>
+              <td><a href ="#" data-id="<%=incomes[i]._id%>" class="deleteIncomeLink">DELETE</a>
+              <td><a href="/incomes/<%=incomes[i]._id%>" class="updateIncomeLink">EDIT/UPDATE</a>
+            </tr>
+          <% } %>
+        </tbody>
+          <tfoot>
+          <tr>
+            <th scope="row">Current Balance
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td id= "totalBalance"></td>
+              <td>X</td>
+              <td>X</td>
+            </th>
+          </tr>
+        </tfoot>
+        <tfoot>
+          <tr>
+            <th scope="row">Total Income
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td id= "totalIncomeYearly"></td>
+              <td>X</td>
+              <td>X</td>
+            </th>
+          </tr>
+        </tfoot>
+        <tfoot>
+          <tr>
+            <th scope="row">After Tax
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td id="totalIncomeAfterTax"></td>
+              <td>X</td>
+              <td>X</td>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+ </div>
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+<% include includes/footers.ejs %>
+//id='current<%=i%>'
