@@ -1,6 +1,0 @@
-provider: heroku
-  api_key:
-    secure: A_LONG_KEY
-  app: YOUR_HEROKU_APP_NAME
-  on:
-    repo: YOUR_REPO_NAME
