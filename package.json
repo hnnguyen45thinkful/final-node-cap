@@ -1,5 +1,5 @@
 {
-  "name": "node-authentication",
+  "name": "budget-app",
   "version": "1.0.0",
   "description": "A budget app to help keep track of all your money.",
   "main": "server.js",
