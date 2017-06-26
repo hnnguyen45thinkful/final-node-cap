@@ -4,16 +4,25 @@ body{
  	word-wrap:break-word;
  }
 .bottom{
-	font-size: 25px;
 	font-family: "Times New Roman", Georgia, Serif;
 	font-weight: bold;
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
+    position: relative;
+    top: 120px;
+    left: 20px;
     font-size: 30px;
-	background: rgba(255, 0, 0, 0.5);
+	background: rgba(238, 238, 238, 0.5);
 
 }
+
+.container {
+  background: rgba(238, 238, 238, 0.5);
+}
+
+ .info-password1, .info-password2 {
+    position: relative;
+    left:300px;
+    bottom:32px
+ }
 
 .profile1{
 	font-size: 40px;
@@ -25,10 +34,7 @@ body{
 	font-weight: bold;
 }
 
-.text-center{
-	background-color: rgba(0,255,0,0.5);
 
-}
 #instructions{
 	font-size: 30px;
 
