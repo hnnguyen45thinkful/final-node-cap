@@ -14,8 +14,23 @@ body{
 
 }
 
-.container {
+/*.container {
   background: rgba(238, 238, 238, 0.5);
+}
+*/
+
+.topnav {
+  float: right;
+  /*background: #151b1e;
+  */  border-radius: 10px;
+    position: absolute;
+    right: 60px;
+    top: 30px;
+    padding: 10px;
+    color: #fff;
+    font-family: AvantGardeBook, Helvetica;
+
+
 }
 
  .info-password1, .info-password2 {
@@ -30,8 +45,14 @@ body{
 }
 
 .title1{
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: bold;
+  float :left;
+  position: absolute;
+  width: 350px;
+  height: 80px;
+  left: 0;
+  top: 20px;
 }
 
 
