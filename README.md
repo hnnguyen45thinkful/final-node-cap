@@ -4,7 +4,7 @@
 
 ## **HTML5 | CSS3 | Javascript | MongoDB/Mongoose | EJS(Embedded Javascript) | Node.js**  
 
-#### This is a budget tracker application to keep track of any expenses and also compare by looking how much bills were paid previous and before. Also, computes the current income and deducts from your current salary earnings. You can create, read, update, delete any bills to either keep or compare how much you have spend within a time frame.
+#### This is a budget tracker application to keep track of any expenses and also compare how many bills were paid previously. Also, computes the current income and deducts from your current salary earnings. You can create, read, update, delete any bills to either keep or compare how much you have left too spend within a time frame.
 
 Demo Link 
 [(Click Here)](https://budget-tracker-system.herokuapp.com)
